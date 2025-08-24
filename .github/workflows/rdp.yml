@@ -33,7 +33,7 @@ jobs:
 
     - name: Start Ngrok Tunnel
       run: |
-        Start-Process -FilePath "$pwd\ngrok.exe" tcp 3389
+        Start-Process -FilePath "$pwd\ngrok.exe" -ArgumentList "tcp 3389 --log=stdout"
 
         $tunnelUrl = $null
         $timeout = 60
